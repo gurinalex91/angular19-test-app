@@ -1,0 +1,286 @@
+<form class="settings-form">
+  <div class="settings-form__header">
+    <h2 class="settings-form__title">Info</h2>
+    <div class="settings-form__controls">
+      <button class="settings-form__button btn btn--secondary">Cancel</button>
+      <button class="settings-form__button btn btn--primary">Save</button>
+    </div>
+  </div>
+
+  <fieldset class="settings-form__section">
+    <legend class="settings-form__section-title">Operator Info</legend>
+    <div class="settings-form__section-content">
+      <div class="settings-form__input-group">
+        <label for="operator-id" class="settings-form__label">
+          Operator ID
+        </label>
+        <input
+          id="operator-id"
+          class="settings-form__input disabled"
+          disabled="disabled"
+          name="operator-id"
+          type="text"
+          placeholder="3894019"
+        />
+      </div>
+
+      <div class="settings-form__input-group">
+        <label for="name" class="settings-form__label">Name</label>
+        <input
+          id="name"
+          class="settings-form__input"
+          name="name"
+          type="text"
+          placeholder="Aquaina Casino"
+        />
+      </div>
+
+      <div class="settings-form__input-group">
+        <label for="registration-date" class="settings-form__label">
+          Registration date
+        </label>
+        <input
+          id="registration-date"
+          class="settings-form__input disabled"
+          disabled="disabled"
+          name="registrationDate"
+          type="date"
+        />
+      </div>
+
+      <div class="settings-form__input-group">
+        <label for="launch-date" class="settings-form__label">
+          Launch date
+        </label>
+        <input
+          id="launch-date"
+          class="settings-form__input disabled"
+          disabled="disabled"
+          name="launchDate"
+          type="date"
+        />
+      </div>
+
+      <div class="settings-form__input-group">
+        <label for="time-zone" class="settings-form__label">Time Zone</label>
+        <app-custom-select
+          selectId="time-zone"
+          name="timeZone"
+          [options]="timezones"
+          [(ngModel)]="selectedTimezone"
+        ></app-custom-select>
+      </div>
+    </div>
+  </fieldset>
+
+  <fieldset class="settings-form__section">
+    <legend class="settings-form__section-title">Address</legend>
+    <div class="settings-form__section-content">
+      <div class="settings-form__input-group">
+        <label for="street-adress" class="settings-form__label">
+          Street Address
+        </label>
+        <input
+          id="street-adress"
+          class="settings-form__input"
+          name="streetAdress"
+          type="text"
+          placeholder="Hauptstraße 123"
+        />
+      </div>
+
+      <div class="settings-form__input-group">
+        <label for="apartment" class="settings-form__label">
+          Apartment, Suite, Unit, etc. (optional)
+        </label>
+        <input
+          id="apartment"
+          class="settings-form__input"
+          name="apartmentAdress"
+          type="text"
+          placeholder="Büro 456"
+        />
+      </div>
+
+      <div class="settings-form__input-group">
+        <label for="country" class="settings-form__label">Country</label>
+        <app-custom-select
+          selectId="country"
+          name="country"
+          [options]="countries"
+          [(ngModel)]="selectedCountry"
+        ></app-custom-select>
+      </div>
+
+      <div class="settings-form__input-group">
+        <label for="province" class="settings-form__label">
+          State/Province
+        </label>
+        <app-custom-select
+          selectId="province"
+          name="province"
+          [options]="provinces"
+          [(ngModel)]="selectedProvince"
+        ></app-custom-select>
+      </div>
+
+      <div class="settings-form__input-group">
+        <label for="time-zone" class="settings-form__label">City</label>
+        <app-custom-select
+          selectId="city"
+          name="city"
+          [options]="cities"
+          [(ngModel)]="selectedCity"
+        ></app-custom-select>
+      </div>
+
+      <div class="settings-form__input-group">
+        <label for="postal-code" class="settings-form__label">
+          Postal Code
+        </label>
+        <input
+          id="postal-code"
+          class="settings-form__input"
+          name="postalCode"
+          type="text"
+          placeholder="10115"
+        />
+      </div>
+    </div>
+  </fieldset>
+
+  <fieldset class="settings-form__section">
+    <legend class="settings-form__section-title">Contact Person</legend>
+    <div class="settings-form__section-content">
+      <div class="settings-form__input-group">
+        <label for="first-name" class="settings-form__label">First Name</label>
+        <input
+          id="first-name"
+          class="settings-form__input"
+          name="firstName"
+          type="text"
+          placeholder="Oiliver"
+        />
+      </div>
+
+      <div class="settings-form__input-group">
+        <label for="last-name" class="settings-form__label">Last Name</label>
+        <input
+          id="last-name"
+          class="settings-form__input"
+          name="lastName"
+          type="text"
+          placeholder="Connor"
+        />
+      </div>
+    </div>
+  </fieldset>
+
+  <fieldset class="settings-form__section">
+    <legend class="settings-form__section-title">
+      <span>Communication Channels</span>
+      <button
+        type="button"
+        class="settings-form__section-button btn btn--secondary btn--add"
+      >
+        <span class="btn__icon">+</span>
+        <span class="btn__text">Add</span>
+      </button>
+    </legend>
+    <div class="settings-form__table-wrapper">
+      <table class="settings-form__table settings-table">
+        <thead class="settings-table__head">
+          <tr class="settings-table__row settings-table__row--header">
+            <th class="settings-table__cell settings-table__cell--header">
+              ID
+            </th>
+            <th class="settings-table__cell settings-table__cell--header">
+              Name
+            </th>
+            <th class="settings-table__cell settings-table__cell--header">
+              Type
+            </th>
+            <th class="settings-table__cell settings-table__cell--header">
+              Contact
+            </th>
+            <th class="settings-table__cell settings-table__cell--header">
+              Is Verified
+            </th>
+          </tr>
+        </thead>
+        <tbody class="settings-table__body">
+          <tr class="settings-table__row">
+            <td class="settings-table__cell">640</td>
+            <td class="settings-table__cell">Sware</td>
+            <td class="settings-table__cell">SMS, Email</td>
+            <td class="settings-table__cell">support&#64;example.com</td>
+            <td class="settings-table__cell settings-table__cell--status">
+              <div class="settings-table__cell-status">
+                <svg class="settings-table__status-icon">
+                  <use href="/sprite.svg#connected"></use>
+                </svg>
+                <span class="settings-table__status-text">Connected</span>
+              </div>
+            </td>
+          </tr>
+          <tr class="settings-table__row">
+            <td class="settings-table__cell">639</td>
+            <td class="settings-table__cell">Aquinim</td>
+            <td class="settings-table__cell">SMS, Email</td>
+            <td class="settings-table__cell">-</td>
+            <td class="settings-table__cell settings-table__cell--status">
+              <div class="settings-table__cell-status">
+                <svg class="settings-table__status-icon">
+                  <use href="/sprite.svg#connected"></use>
+                </svg>
+                <span class="settings-table__status-text">Connected</span>
+              </div>
+            </td>
+          </tr>
+          <tr class="settings-table__row">
+            <td class="settings-table__cell">638</td>
+            <td class="settings-table__cell">SendX</td>
+            <td class="settings-table__cell">+SMS, Email</td>
+            <td class="settings-table__cell">-</td>
+            <td class="settings-table__cell settings-table__cell--status">
+              <div class="settings-table__cell-status">
+                <svg class="settings-table__status-icon">
+                  <use href="/sprite.svg#connected"></use>
+                </svg>
+                <span class="settings-table__status-text">Connected</span>
+              </div>
+            </td>
+          </tr>
+          <tr class="settings-table__row">
+            <td class="settings-table__cell">637</td>
+            <td class="settings-table__cell">Qai-Qai</td>
+            <td class="settings-table__cell">SMS, Email</td>
+            <td class="settings-table__cell">-</td>
+            <td class="settings-table__cell settings-table__cell--status">
+              <div class="settings-table__cell-status">
+                <svg class="settings-table__status-icon">
+                  <use href="/sprite.svg#connected"></use>
+                </svg>
+                <span class="settings-table__status-text">Connected</span>
+              </div>
+            </td>
+          </tr>
+          <tr class="settings-table__row">
+            <td class="settings-table__cell">636</td>
+            <td class="settings-table__cell">Mega-send</td>
+            <td class="settings-table__cell">Email</td>
+            <td class="settings-table__cell">-</td>
+            <td class="settings-table__cell settings-table__cell--status">
+              <div class="settings-table__cell-status">
+                <svg class="settings-table__status-icon">
+                  <use href="/sprite.svg#connected"></use>
+                </svg>
+                <span class="settings-table__status-text">Connected</span>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </fieldset>
+</form>

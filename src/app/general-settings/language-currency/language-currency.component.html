@@ -1,0 +1,259 @@
+<form class="settings-form">
+  <div class="settings-form__header">
+    <h2 class="settings-form__title">Language & Currency</h2>
+    <div class="settings-form__controls">
+      <button class="settings-form__button btn btn--secondary">Cancel</button>
+      <button class="settings-form__button btn btn--primary">Save</button>
+    </div>
+  </div>
+
+  <fieldset class="settings-form__section">
+    <legend class="settings-form__section-title">Languages</legend>
+    <div class="settings-form__section-content">
+      <div class="settings-form__input-group">
+        <div class="settings-form__label-row">
+          <label for="language" class="settings-form__label">
+            Main Language
+          </label>
+          <span class="settings-form__info" aria-label="More info">
+            <svg class="settings-form__icon settings-form__icon--info">
+              <use href="/sprite.svg#info"></use>
+            </svg>
+            <div class="popover">
+              Additional information about the main language.
+            </div>
+          </span>
+        </div>
+        <app-custom-select
+          selectId="language"
+          name="language"
+          [options]="languages"
+          [(ngModel)]="selectedLanguage"
+        ></app-custom-select>
+      </div>
+      <div class="settings-form__tags tags">
+        <div class="tags__header">
+          <h3 class="tags__title">Languages</h3>
+          <button
+            type="button"
+            class="tags__add-button settings-form__section-button btn btn--secondary btn--add"
+          >
+            <span class="btn__icon">+</span>
+            <span class="btn__text">Add</span>
+          </button>
+        </div>
+        <ul class="tags__list">
+          <li class="tags__item">
+            <svg class="tags__icon">
+              <use href="/sprite.svg#gbr"></use>
+            </svg>
+            <span class="tags__label">ENG</span>
+            <button type="button" class="tags__remove-button">
+              <svg class="tags__icon">
+                <use href="/sprite.svg#close"></use>
+              </svg>
+            </button>
+          </li>
+          <li class="tags__item">
+            <svg class="tags__icon">
+              <use href="/sprite.svg#spa"></use>
+            </svg>
+            <span class="tags__label">SPA</span>
+            <button type="button" class="tags__remove-button">
+              <svg class="tags__icon">
+                <use href="/sprite.svg#close"></use>
+              </svg>
+            </button>
+          </li>
+          <li class="tags__item">
+            <svg class="tags__icon">
+              <use href="/sprite.svg#fra"></use>
+            </svg>
+            <span class="tags__label">FRA</span>
+            <button type="button" class="tags__remove-button">
+              <svg class="tags__icon">
+                <use href="/sprite.svg#close"></use>
+              </svg>
+            </button>
+          </li>
+          <li class="tags__item">
+            <svg class="tags__icon">
+              <use href="/sprite.svg#deu"></use>
+            </svg>
+            <span class="tags__label">DEU</span>
+            <button type="button" class="tags__remove-button">
+              <svg class="tags__icon">
+                <use href="/sprite.svg#close"></use>
+              </svg>
+            </button>
+          </li>
+          <li class="tags__item">
+            <svg class="tags__icon">
+              <use href="/sprite.svg#zho"></use>
+            </svg>
+            <span class="tags__label">ZHO</span>
+            <button type="button" class="tags__remove-button">
+              <svg class="tags__icon">
+                <use href="/sprite.svg#close"></use>
+              </svg>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </fieldset>
+
+  <fieldset class="settings-form__section">
+    <legend class="settings-form__section-title">Currencies</legend>
+    <div class="settings-form__section-content">
+      <div class="settings-form__input-group">
+        <div class="settings-form__label-row">
+          <label for="main-currency" class="settings-form__label">
+            Main Currency
+          </label>
+          <span class="settings-form__info" aria-label="More info">
+            <svg class="settings-form__icon settings-form__icon--info">
+              <use href="/sprite.svg#info"></use>
+            </svg>
+            <div class="popover">
+              Additional information about the main currency.
+            </div>
+          </span>
+        </div>
+        <app-custom-select
+          selectId="main-currency"
+          name="mainCurrency"
+          [options]="currencies"
+          [(ngModel)]="selectedCurrencies"
+        ></app-custom-select>
+      </div>
+      <div class="settings-form__tags tags">
+        <div class="tags__header">
+          <h3 class="tags__title">Website Fiat Currencies</h3>
+          <button
+            type="button"
+            class="tags__add-button settings-form__section-button btn btn--secondary btn--add"
+          >
+            <span class="btn__icon">+</span>
+            <span class="btn__text">Add</span>
+          </button>
+        </div>
+        <ul class="tags__list">
+          <li class="tags__item">
+            <svg class="tags__icon">
+              <use href="/sprite.svg#usd"></use>
+            </svg>
+            <span class="tags__label">USD</span>
+            <button type="button" class="tags__remove-button">
+              <svg class="tags__icon">
+                <use href="/sprite.svg#close"></use>
+              </svg>
+            </button>
+          </li>
+          <li class="tags__item">
+            <svg class="tags__icon">
+              <use href="/sprite.svg#gbp"></use>
+            </svg>
+            <span class="tags__label">GBP</span>
+            <button type="button" class="tags__remove-button">
+              <svg class="tags__icon">
+                <use href="/sprite.svg#close"></use>
+              </svg>
+            </button>
+          </li>
+          <li class="tags__item">
+            <svg class="tags__icon">
+              <use href="/sprite.svg#cad"></use>
+            </svg>
+            <span class="tags__label">CAD</span>
+            <button type="button" class="tags__remove-button">
+              <svg class="tags__icon">
+                <use href="/sprite.svg#close"></use>
+              </svg>
+            </button>
+          </li>
+          <li class="tags__item">
+            <svg class="tags__icon">
+              <use href="/sprite.svg#cny"></use>
+            </svg>
+            <span class="tags__label">CNY</span>
+            <button type="button" class="tags__remove-button">
+              <svg class="tags__icon">
+                <use href="/sprite.svg#close"></use>
+              </svg>
+            </button>
+          </li>
+          <li class="tags__item">
+            <svg class="tags__icon">
+              <use href="/sprite.svg#eur"></use>
+            </svg>
+            <span class="tags__label">EUR</span>
+            <button type="button" class="tags__remove-button">
+              <svg class="tags__icon">
+                <use href="/sprite.svg#close"></use>
+              </svg>
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div class="settings-form__tags tags">
+        <div class="tags__header">
+          <h3 class="tags__title">Website Crypto Currencies</h3>
+          <button
+            type="button"
+            class="tags__add-button settings-form__section-button btn btn--secondary btn--add"
+          >
+            <span class="btn__icon">+</span>
+            <span class="btn__text">Add</span>
+          </button>
+        </div>
+        <ul class="tags__list">
+          <li class="tags__item">
+            <svg class="tags__icon">
+              <use href="/sprite.svg#bch"></use>
+            </svg>
+            <span class="tags__label">BCH</span>
+            <button type="button" class="tags__remove-button">
+              <svg class="tags__icon">
+                <use href="/sprite.svg#close"></use>
+              </svg>
+            </button>
+          </li>
+          <li class="tags__item">
+            <svg class="tags__icon">
+              <use href="/sprite.svg#bnb"></use>
+            </svg>
+            <span class="tags__label">BNB</span>
+            <button type="button" class="tags__remove-button">
+              <svg class="tags__icon">
+                <use href="/sprite.svg#close"></use>
+              </svg>
+            </button>
+          </li>
+          <li class="tags__item">
+            <svg class="tags__icon">
+              <use href="/sprite.svg#ada"></use>
+            </svg>
+            <span class="tags__label">ADA</span>
+            <button type="button" class="tags__remove-button">
+              <svg class="tags__icon">
+                <use href="/sprite.svg#close"></use>
+              </svg>
+            </button>
+          </li>
+          <li class="tags__item">
+            <svg class="tags__icon">
+              <use href="/sprite.svg#eth"></use>
+            </svg>
+            <span class="tags__label">ETH</span>
+            <button type="button" class="tags__remove-button">
+              <svg class="tags__icon">
+                <use href="/sprite.svg#close"></use>
+              </svg>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </fieldset>
+</form>

@@ -1,0 +1,58 @@
+<header class="header">
+  <nav class="header__nav">
+    <!-- Left menu -->
+    <div class="menu-container">
+      <button class="menu-toggle" (click)="toggleMenu()">Settings</button>
+      <ul
+        class="menu menu--left"
+        [class.menu--open]="isMenuOpen"
+        [attr.aria-hidden]="!isMenuOpen"
+      >
+        <li class="menu__item">
+          <a class="menu__link menu__link--active" href="#">Settings</a>
+        </li>
+        <li class="menu__item">
+          <a class="menu__link" href="#">Module #1</a>
+        </li>
+        <li class="menu__item">
+          <a class="menu__link" href="#">Module #2</a>
+        </li>
+        <li class="menu__item">
+          <a class="menu__link" href="#">Module #3</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Right menu-->
+    <ul class="menu menu--right">
+      <li class="menu__item">
+        <a class="menu__link" href="#">
+          <svg class="menu__icon">
+            <use href="/sprite.svg#icon-list-checked"></use>
+          </svg>
+        </a>
+      </li>
+      <li class="menu__item">
+        <a class="menu__link" href="#">
+          <svg class="menu__icon">
+            <use href="/sprite.svg#icon-settings"></use>
+          </svg>
+        </a>
+      </li>
+      <li class="menu__item">
+        <a class="menu__link" href="#">
+          <svg class="menu__icon">
+            <use href="/sprite.svg#icon-add"></use>
+          </svg>
+        </a>
+      </li>
+      <li class="menu__item">
+        <a class="menu__link" href="#">
+          <svg class="menu__icon">
+            <use href="/sprite.svg#icon-upload"></use>
+          </svg>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>

@@ -1,16 +1,22 @@
 {
   "name": "test-app",
   "version": "0.0.0",
+  "type": "module",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "prettier": "npx prettier --write .",
+    "stylelint": "stylelint '**/*.scss'",
+    "stylelint-fix": "stylelint '**/*.{css,scss}' --fix",
+    "eslint": "npx eslint . --fix",
+    "build:sprite": "svg-sprite-cli -s --symbol-dest ./src/assets --symbol-id 'icon-%f' ./public/icons/*.svg",
+    "watch:sprite": "chokidar './public/icons/*.svg' -c 'npm run build:sprite'"
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^19.1.0",
     "@angular/common": "^19.1.0",
     "@angular/compiler": "^19.1.0",
     "@angular/core": "^19.1.0",
@@ -27,12 +33,22 @@
     "@angular/cli": "^19.1.4",
     "@angular/compiler-cli": "^19.1.0",
     "@types/jasmine": "~5.1.0",
+    "@typescript-eslint/eslint-plugin": "^8.21.0",
+    "@typescript-eslint/parser": "^8.21.0",
+    "eslint": "^9.18.0",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-define-config": "^2.1.0",
+    "eslint-plugin-prettier": "^5.2.3",
     "jasmine-core": "~5.5.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "prettier": "^3.4.2",
+    "stylelint": "^16.14.1",
+    "stylelint-config-standard": "^37.0.0",
+    "stylelint-scss": "^6.10.1",
     "typescript": "~5.7.2"
   }
 }
