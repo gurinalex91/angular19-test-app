@@ -1,0 +1,27 @@
+.tabs {
+  &__header {
+    display: flex;
+    padding: 12px 16px 0;
+    border-bottom: 1px solid #ddd;
+    background: var(--tertiary-bg-color);
+
+    &-item {
+      padding: 10px 16px;
+      margin-bottom: -1px;
+      border: 1px solid transparent;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+      cursor: pointer;
+
+      &.active {
+        background-color: var(--secondary-bg-color);
+        border-color: var(--divider-color) var(--divider-color)
+          var(--secondary-bg-color);
+      }
+    }
+  }
+
+  &__content {
+    padding: 16px;
+  }
+}

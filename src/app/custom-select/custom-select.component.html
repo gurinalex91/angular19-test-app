@@ -1,0 +1,13 @@
+<div class="custom-select">
+  <div class="select-wrapper">
+    <select
+      [id]="selectId"
+      [(ngModel)]="selectedOption"
+      (change)="handleChange($event)"
+    >
+      <option *ngFor="let option of options" [value]="option">
+        {{ option }}
+      </option>
+    </select>
+  </div>
+</div>

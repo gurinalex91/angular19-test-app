@@ -1,0 +1,139 @@
+.settings-form {
+  &__section-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__input-group {
+    @media (min-width: 576px) {
+      max-width: 300px;
+    }
+  }
+
+  &__label-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__info {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    &:hover .popover {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .popover {
+      position: absolute;
+      bottom: calc(100% + 6px);
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: var(--primary-bg-color);
+      color: var(--tertiary-text-color);
+      padding: 8px 12px;
+      border-radius: 4px;
+      font-size: 12px;
+      line-height: 1.4;
+      box-shadow: var(--btn-shadow);
+      max-width: 40vw;
+      opacity: 0;
+      visibility: hidden;
+      transition:
+        opacity var(--transition-default),
+        visibility var(--transition-default);
+      z-index: 10;
+
+      @media (min-width: 768px) {
+        max-width: 300px;
+        white-space: nowrap;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 0;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-top: 6px solid var(--primary-bg-color);
+      }
+    }
+  }
+
+  &__icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .tags {
+    &__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 0;
+    }
+
+    &__title {
+      font-weight: 600;
+      line-height: 1.5;
+    }
+
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      padding-block: 12px;
+    }
+
+    &__item {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 6px;
+      background-color: var(--tags-label-bg);
+      border-radius: 28px;
+      border: 1px solid transparent;
+
+      &:has(.tags__remove-button:active) {
+        border-color: var(--stroke-active-color);
+      }
+    }
+
+    &__label {
+      font-size: 14px;
+      line-height: 1.4;
+      color: var(--tags-label-color);
+    }
+
+    &__remove-button {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+
+      .tags__icon {
+        transition: opacity var(--transition-default);
+      }
+
+      &:hover {
+        .tags__icon {
+          opacity: 0.5;
+        }
+      }
+    }
+
+    &__icon {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+    }
+  }
+}

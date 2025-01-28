@@ -1,0 +1,27 @@
+.custom-select {
+  display: flex;
+  flex-direction: column;
+
+  .select-wrapper {
+    position: relative;
+    display: inline-block;
+
+    select {
+      width: 100%;
+      appearance: none;
+      cursor: pointer;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
+      background: url('../../../public/icons/select.svg');
+      pointer-events: none;
+    }
+  }
+}
